@@ -1,0 +1,38 @@
+<%- include('./partials/header.ejs') %>
+    <div class="container">
+        <% if (message != '') { %>
+            <p class="text-center text-danger">
+                <%= message %>
+            </p>
+            <% } %>
+                <form class="add-paciente-form" action="" method="post" enctype="json">
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <input type="text" class="form-control" name="Given" id="Given" placeholder="Nombre" required>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <input type="text" class="form-control" name="Family" id="Family" placeholder="Apellido" required>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <input type="text" class="form-control" name="ApellidoPaterno" id="ApellidoPaterno" placeholder="Apellid Paterno" required>
+                        </div>
+                       <div class="form-group col-md-4">
+                            <input type="text" class="form-control" name="birthDate" id="birthDate" placeholder="dd/mm/yyyy" required>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <input type="text" class="form-control" name="Gender" id="Gender" placeholder="género" required>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <input type="text" class="form-control" name="Identifier" id="Identificador" placeholder="Identificador" required>
+                        </div>
+                             <div class="form-group col-md-4">
+                            <input type="text" class="form-control" name="DNI" id="DNI" placeholder="DNI" required>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary float-right">Agregar Paciente</button>
+                </form>
+    </div>
+    </div>
+    </body>
+
+    </html>

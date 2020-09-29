@@ -1,0 +1,28 @@
+<%- include ('partials/header.ejs') %>
+    <div class="table-wrapper">
+        <table class="table table-hovered">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Seccion</th>
+                    <th scope="col">Texto</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <% secciones.forEach((seccion,index)  => { %>
+                    <tr>
+                        <th scope="row">
+                            <%= seccion.title %>
+                        </th>
+                            
+                        <td>
+                            <%- seccion.text.div %>
+                        </td>
+                    </tr>
+                    <% }) %>
+            </tbody>
+    </div>
+    </div>
+    </body>
+
+    </html>

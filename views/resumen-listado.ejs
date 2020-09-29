@@ -1,0 +1,33 @@
+<%- include ('partials/header.ejs') %>
+    <div class="table-wrapper">
+        <table class="table table-hovered">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Nombre</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <% dominios.forEach((dominio,index)  => { %>
+                    <tr>
+                        <th scope="row">
+                            <%= dominio.resource.identifier[1].value %>
+                        </th>
+                            
+                        <td>
+                            <%= dominio.resource.name %>
+                        </td>
+                        <td>
+                            <a href="/unresumen?dominio=<%= dominio.resource.identifier[1].value %>&identificador=<%= ident_paciente.value %>" 
+                                 class="btn btn-sm btn-secondary">Pedir Resumen</a>
+                    
+                        </td>
+                    </tr>
+                    <% }) %>
+            </tbody>
+    </div>
+    </div>
+    </body>
+
+    </html>

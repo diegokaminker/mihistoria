@@ -1,0 +1,52 @@
+<%- include ('./partials/header.ejs') %>
+    <div class="container">
+        <% if (message) { %>
+            <p class="text-center text-danger">
+                <%= message %>
+            </p>
+            <% } %>
+
+                <% if (paciente) { %>
+                    <form class="edit-paciente-form" action="" method="post" enctype="json">
+                        <div class="form-row">
+                            <div class="form-group col-md-4">
+                                <label for="given">Nombre</label>
+                                <input type="text" class="form-control" name="Given" id="Given" value="<%= paciente.Given %>" required>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="family">Apellido</label>
+                                <input type="text" class="form-control" name="Family" id="Family" value="<%= paciente.Family %>" required>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="ApellidoPaterno">Apellido Paterno</label>
+                                <input type="text" class="form-control" name="ApellidoPaterno" id="ApellidoPaterno" value="<%= paciente.ApellidoPaterno %>">
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="identifier">Identificador</label>
+                                <input type="text" class="form-control" name="Identifier" id="Identifier" value="<%= paciente.Identifier %>">
+                            </div>
+                            <div class="form-group col-md-4 ">
+                                <label for="gender">Género</label>
+                                <input type="text " class="form-control " name="Gender" id="Gender" value="<%= paciente.Gender %>">
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="birthDate">Fecha Nacimiento</label>
+                                <input type="text" class="form-control" name="birthDate" id="birthDate" value="<%= paciente.birthDate %>">
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="DNI">DNI</label>
+                                <input type="text" class="form-control" name="DNI" id="DNI" value="<%= paciente.DNI %>">
+                            </div>
+
+
+                        </div>
+                        <button type="submit" class="btn btn-success float-right">Actualizar Paciente</button>
+                    </form>
+                    <% } else { %>
+                        <p class="text-center">Paciente No Encontrado. Click <a href="/add">aqui</a> para agregar</p>
+                        <% } %>
+    </div>
+    </div>
+    </body>
+
+    </html>

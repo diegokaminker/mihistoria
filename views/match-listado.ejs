@@ -1,0 +1,59 @@
+<%- include ('partials/header.ejs') %>
+    <div class="table-wrapper">
+        <table class="table table-hovered">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Apellido</th>
+                    <th scope="col">Apellido Paterno</th>
+                    <th scope="col">Fecha Nacimiento</th>
+                    <th scope="col">Género</th>
+                    <th scope="col">Identificadores</th>
+                    <th scope="col">score</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <% pacientes.forEach((paciente,index)  => { %>
+                    <tr>
+                        <th scope="row">
+                            <%= paciente.resource.id %>
+                        </th>
+                            
+                        <td>
+                            <%= paciente.resource.name[0].given[0] %>
+                            </td>
+                            
+
+                        <td>
+                            <%= paciente.resource.name[0].family %>
+                        </td>
+                        <td>
+                            <%= paciente.resource.name[0]._family.extension[0].valueString %>
+                            
+                            
+                        </td>
+                        <td>
+                            <%= paciente.resource.birthDate %>
+                        </td>
+                        <td>
+                            <%= paciente.resource.gender %>
+                        </td>
+                        <td>
+                            <%= paciente.resource.identifier[0].value %>
+                        </td>
+                        <td>
+                            <%= paciente.search.score %>
+                        </td>
+                        <td>
+                           
+                        </td>
+                    </tr>
+                    <% }) %>
+            </tbody>
+    </div>
+    </div>
+    </body>
+
+    </html>

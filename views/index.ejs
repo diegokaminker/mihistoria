@@ -1,0 +1,59 @@
+<%- include ('partials/header.ejs') %>
+    <div class="table-wrapper">
+        <table class="table table-hovered">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Apellido</th>
+                    <th scope="col">Apellido Paterno</th>
+                    <th scope="col">Fecha Nacimiento</th>
+                    <th scope="col">Género</th>
+                    <th scope="col">Id Federador</th>
+                    <th scope="col">DNI</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <% pacientes.forEach((paciente,index)  => { %>
+                    <tr>
+                        <th scope="row">
+                            <%= paciente.Id %>
+                        </th>
+                        <td>
+                            <%= paciente.Given %>
+                        </td>
+                        <td>
+                            <%= paciente.Family %>
+                        </td>
+                        <td>
+                            <%= paciente.ApellidoPaterno %>
+                        </td>
+                        <td>
+                            <%= paciente.birthDate %>
+                        </td>
+                        <td>
+                            <%= paciente.Gender %>
+                        </td>
+                        <td>
+                            <%= paciente.Identifier %>
+                        </td>
+                        <td>
+                            <%= paciente.DNI %>
+                        </td>
+                        <td>
+                            <a href="/edit/<%= paciente.Id %>" target="_blank" rel="noopener" class="btn btn-sm btn-success">Editar</a>
+                            <a href="/delete/<%= paciente.Id %>"  class="btn btn-sm btn-danger">Borrar</a>
+                            <a href="/match/<%= paciente.Id %>"   class="btn btn-sm btn-info">Match</a>
+                            <a href="/federar/<%= paciente.Id %>" class="btn btn-sm btn-secondary">Federar</a>
+                            <a href="/resumen/<%= paciente.Id %>"  class="btn btn-sm btn-secondary">Pedir IPS</a>
+                         
+                        </td>
+                    </tr>
+                    <% }) %>
+            </tbody>
+    </div>
+    </div>
+    </body>
+
+    </html>
